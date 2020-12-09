@@ -15,11 +15,15 @@ with open("input.txt", "r") as f:
 
     for rule in rawRules:
         if " ".join(rule[1][0]) == "no other":
-            value = []
+            # This bag contains nothing else, so just leave its contents as an empty list
+            bagContents = []
         else:
-            value = [(int(x[0]), " ".join(x[1:])) for x in rule[1]]
+            # Put the quantity and the bag type into a tuple that is in a list
+            bagContents = [(int(x[0]), " ".join(x[1:])) for x in rule[1]]
 
-        rules[" ".join(rule[0][0])] = value
+        # Update what each bag type should contain
+        rules[" ".join(rule[0][0])] = bagContents
+
     f.close()
 
 # COMPUTATION

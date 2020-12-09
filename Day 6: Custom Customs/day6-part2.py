@@ -2,7 +2,7 @@
 day6-part2.py
 
 Created on 2020-12-06
-Updated on 2020-12-06
+Updated on 2020-12-09
 
 Copyright © Ryan Kan
 """
@@ -14,14 +14,14 @@ with open("input.txt", "r") as f:
     f.close()
 
 # COMPUTATION
-totalSum = 0  # Total sum of questions which EVERYONE answered 'yes' to
+totalSum = 0  # Total sum of questions which EVERYONE answered "yes" to
 for group in groups:
     yesQuestionSet = set("abcdefghijklmnopqrstuvwxyz")
     for person in group.split(" "):
-        # Only keep the questions which EVERYONE answered 'yes' to <==> Set intersections
+        # Only keep the questions which EVERYONE answered "yes" to
         yesQuestionSet = yesQuestionSet.intersection(set(person))
 
-    totalSum += len(list(yesQuestionSet))
+    totalSum += len(yesQuestionSet)
 
 # OUTPUT
 print(totalSum)

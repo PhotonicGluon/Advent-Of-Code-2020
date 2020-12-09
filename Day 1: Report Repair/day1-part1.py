@@ -2,7 +2,7 @@
 day1-part1.py
 
 Created on 2020-12-02
-Updated on 2020-12-02
+Updated on 2020-12-09
 
 Copyright © Ryan Kan
 """
@@ -13,7 +13,7 @@ with open("input.txt", "r") as f:
     f.close()
 
 # COMPUTATION: Use the 2Sum algorithm
-# Let array A be `numbers` in ascending order and array B be `numbers` in decsending order
+# Let array A be `numbers` in ascending order and array B be `numbers` in descending order
 A = sorted(numbers)
 B = sorted(numbers)[::-1]
 

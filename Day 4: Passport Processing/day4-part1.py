@@ -2,7 +2,7 @@
 day4-part1.py
 
 Created on 2020-12-04
-Updated on 2020-12-04
+Updated on 2020-12-09
 
 Copyright © Ryan Kan
 """
@@ -25,7 +25,7 @@ for passport in passports:
         key, value = entry.split(":")
         dictionary[key] = value
 
-    # Remove the 'cid' key since it is optional
+    # Remove the "cid" key since it is optional
     try:
         dictionary.pop("cid")
     except KeyError:

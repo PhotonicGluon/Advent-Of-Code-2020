@@ -52,7 +52,7 @@ while n < len(numbers) - 1:
         subarray = numbers[start:end]
         weakness = max(subarray) + min(subarray)
         print(weakness)
-        break
+        exit()
 
     # If not found then increment `n`
     n += 1

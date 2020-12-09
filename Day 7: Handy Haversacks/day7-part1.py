@@ -2,7 +2,7 @@
 day7-part1.py
 
 Created on 2020-12-07
-Updated on 2020-12-07
+Updated on 2020-12-09
 
 Copyright © Ryan Kan
 """
@@ -15,16 +15,20 @@ with open("input.txt", "r") as f:
 
     for rule in rawRules:
         if " ".join(rule[1][0]) == "no other":
-            value = []
+            # This bag contains nothing else, so just leave its contents as an empty list
+            bagContents = []
         else:
-            value = [(int(x[0]), " ".join(x[1:])) for x in rule[1]]
+            # Put the quantity and the bag type into a tuple that is in a list
+            bagContents = [(int(x[0]), " ".join(x[1:])) for x in rule[1]]
 
-        rules[" ".join(rule[0][0])] = value
+        # Update what each bag type should contain
+        rules[" ".join(rule[0][0])] = bagContents
+
     f.close()
 
 # COMPUTATION
 queue = ["shiny gold"]  # We have a shiny gold bag
-canHoldGoldBag = set()
+bagsThatCanHoldAShinyGoldBag = set()
 
 while len(queue) != 0:
     bag = queue[0]
@@ -34,10 +38,10 @@ while len(queue) != 0:
         possibleBags = rules[containerBag]  # These are the bags that are contained within the `containerBag`
         for possibleBag in possibleBags:
             if possibleBag[1] == bag:  # This possible bag is the desired `bag`
-                canHoldGoldBag = canHoldGoldBag.union({containerBag})  # Only keep unique elements
+                bagsThatCanHoldAShinyGoldBag = bagsThatCanHoldAShinyGoldBag.union({containerBag})
                 queue.append(containerBag)  # Now we need to process which bags can contain the `containerBag`
 
     queue.pop(0)  # Remove the first item in the queue since we just processed it
 
 # OUTPUT
-print(len(canHoldGoldBag))
+print(len(bagsThatCanHoldAShinyGoldBag))

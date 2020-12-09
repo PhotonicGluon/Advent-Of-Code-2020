@@ -2,7 +2,7 @@
 day5-part2.py
 
 Created on 2020-12-05
-Updated on 2020-12-05
+Updated on 2020-12-09
 
 Copyright © Ryan Kan
 """
@@ -15,7 +15,7 @@ with open("input.txt", "r") as f:
 # COMPUTATION & OUTPUT
 seatIDs = []
 for line in lines:
-    # Based on the rules given, 'F' and 'L' will mean a '0' and 'B' and 'R' will mean a 1
+    # Based on the rules given, "F" and "L" will mean a "0" and "B" and "R" will mean a 1
     row = int(line[:7].replace("F", "0").replace("B", "1"), 2)
     col = int(line[7:].replace("L", "0").replace("R", "1"), 2)
 
@@ -30,7 +30,7 @@ for row in range(1, 127 + 1):
             # Compute the seat ID
             seatID = row * 8 + col
 
-            # Check if `seatID + 1` and `seatID - 1` exists, because if they do we found the seat ID
+            # Check if `seatID + 1` and `seatID - 1` exists, because if they do we have found the seat ID
             if (seatID - 1 in seatIDs) and (seatID + 1 in seatIDs):
                 # We found the seat!
                 print(seatID)

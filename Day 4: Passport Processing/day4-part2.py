@@ -2,7 +2,7 @@
 day4-part2.py
 
 Created on 2020-12-04
-Updated on 2020-12-04
+Updated on 2020-12-09
 
 Copyright © Ryan Kan
 """
@@ -25,7 +25,7 @@ for passport in passports:
         key, value = entry.split(":")
         dictionary[key] = value
 
-    # Remove the 'cid' key since it is optional
+    # Remove the "cid" key since it is optional
     try:
         dictionary.pop("cid")
     except KeyError:
@@ -33,7 +33,7 @@ for passport in passports:
 
     # Check if all required fields are there
     if set(dictionary.keys()) != {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}:
-        continue  # Skip this passport
+        continue  # Skip this passport because it is most definitely invalid
 
     # Check birth year
     try:
@@ -103,6 +103,7 @@ for passport in passports:
     except ValueError:
         continue
 
+    # If everything above is okay then it means that this passport is valid
     noValid += 1
 
 # OUTPUT

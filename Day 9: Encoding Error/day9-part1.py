@@ -33,7 +33,7 @@ for number in restOfNumbers:
     # If the number CANNOT be made from two numbers from the `preamble` then output it
     if not found:
         print(number)
-        break  # We don't care about any other numbers, so break out of the loop now
+        exit()  # We don't care about any other numbers
     else:
         # Shift the preamble window along
         preamble.pop(0)  # Remove first element

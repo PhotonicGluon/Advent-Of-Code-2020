@@ -2,7 +2,7 @@
 day6-part1.py
 
 Created on 2020-12-06
-Updated on 2020-12-06
+Updated on 2020-12-09
 
 Copyright © Ryan Kan
 """
@@ -14,10 +14,10 @@ with open("input.txt", "r") as f:
     f.close()
 
 # COMPUTATION
-totalSum = 0  # Total sum of questions which ANYONE answered 'yes' to
+totalSum = 0  # Total sum of questions which ANYONE answered "yes" to
 for group in groups:
     yesQuestions = set(group)  # Only keep unique elements
-    totalSum += len(list(yesQuestions))
+    totalSum += len(yesQuestions)
 
 # OUTPUT
 print(totalSum)
