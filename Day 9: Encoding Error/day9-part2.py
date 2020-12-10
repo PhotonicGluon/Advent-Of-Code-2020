@@ -2,7 +2,7 @@
 day9-part2.py
 
 Created on 2020-12-09
-Updated on 2020-12-09
+Updated on 2020-12-10
 
 Copyright © Ryan Kan
 """
@@ -15,6 +15,7 @@ with open("input.txt", "r") as f:
 
 # FUNCTIONS
 def subarray_sum(arr, no_elements, target_no):
+    """Shamelessly taken from https://www.geeksforgeeks.org/find-subarray-with-given-sum/"""
     # Initialize `curr_sum` as value of first element and starting point as 0
     curr_sum = arr[0]
     start_index = 0
