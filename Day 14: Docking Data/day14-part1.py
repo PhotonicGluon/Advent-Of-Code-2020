@@ -2,7 +2,7 @@
 day14-part1.py
 
 Created on 2020-12-14
-Updated on 2020-12-14
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -20,13 +20,15 @@ with open("input.txt", "r") as f:
     f.close()
 
 # COMPUTATION
+# Run the simulation
 mask = processes[0][1]
 memory = {}
 for process in processes:
     if process[0] == "MASK":
+        # Update the mask
         mask = process[1]
     else:
-        # Apply mask
+        # Apply mask to the memory value
         finalInteger = list(process[2])
         for i, bit in enumerate(mask):
             if bit != "X":

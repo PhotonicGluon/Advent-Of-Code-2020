@@ -2,7 +2,7 @@
 day16-part2.py
 
 Created on 2020-12-16
-Updated on 2020-12-16
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -13,9 +13,9 @@ from collections import defaultdict
 # INPUT
 with open("input-part2.txt", "r") as f:
     content = f.read()
-    sections = content.split("\n\n")  # Split by a double newline
+    sections = content.split("\n\n")
 
-    # The ticket fields
+    # The possible ticket fields
     ticketFields = {}
     for line in sections[0].split("\n"):
         components = line.split(": ")
@@ -63,4 +63,5 @@ answer = 1
 for departureLocation in departureLocations:
     answer *= yourTicket[departureLocation]
 
+# OUTPUT
 print(answer)

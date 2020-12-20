@@ -2,7 +2,7 @@
 day10-part2.py
 
 Created on 2020-12-10
-Updated on 2020-12-10
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -14,8 +14,8 @@ with open("input.txt", "r") as f:
 
 # COMPUTATION
 adaptors.append(0)  # This is the charging port
-adaptors.append(max(adaptors) + 3)  # This is the device
-adaptors = sorted(adaptors)  # Sort the list
+adaptors = sorted(adaptors)  # Sort the list to form the chain of adaptors
+adaptors.append(adaptors[-1] + 3)  # This is the device
 memo = {}
 
 

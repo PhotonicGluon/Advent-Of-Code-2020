@@ -2,7 +2,7 @@
 day19-part1.py
 
 Created on 2020-12-19
-Updated on 2020-12-19
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -62,7 +62,7 @@ def generate_regex(rule_no):
 # Form the RegEx for rule number 0
 ruleZeroRegEx = generate_regex("0")
 
-# Check all the given messages to see if they match the RegEx pattern
+# Check all the given messages to see if they fully match the RegEx pattern
 matchRuleZero = 0
 for message in messages:
     if re.fullmatch(ruleZeroRegEx, message):

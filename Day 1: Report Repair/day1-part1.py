@@ -2,7 +2,7 @@
 day1-part1.py
 
 Created on 2020-12-02
-Updated on 2020-12-09
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -21,7 +21,7 @@ B = sorted(numbers)[::-1]
 i = 0
 j = 1  # Note that i != j
 
-# Loop until exhausted all possibilities
+# Loop until all possibilities are exhausted
 while i != len(A) - 1 and j != len(B) - 1:
     # If A[i] + B[j] - 2020 is positive then increment `j` by 1
     if A[i] + B[j] - 2020 > 0:
@@ -35,5 +35,5 @@ while i != len(A) - 1 and j != len(B) - 1:
     else:
         break
 
-# OUTPUT: Return `A[i] * B[j]`
+# OUTPUT
 print(A[i] * B[j])

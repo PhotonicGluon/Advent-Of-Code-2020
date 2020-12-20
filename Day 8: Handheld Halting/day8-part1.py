@@ -2,7 +2,7 @@
 day8-part1.py
 
 Created on 2020-12-08
-Updated on 2020-12-09
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -37,6 +37,6 @@ while True:
 
     # Try to see if the next line to be run has already been run
     if lineNo in runLines:
-        # Since it already has, it will create an infinite loop, so output the accumulator value
+        # Since the line was already run, it will create an infinite loop, so output the accumulator value
         print(accumulator)
         break

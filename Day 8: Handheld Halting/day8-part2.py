@@ -2,7 +2,7 @@
 day8-part2.py
 
 Created on 2020-12-08
-Updated on 2020-12-09
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -54,7 +54,7 @@ for changedLine in range(len(lines)):
 
             # Try to see if the next line to be run has already been run
             if lineNo in runLines:
-                # Since it already has, it will create an infinite loop, so this is not the line to be changed
+                # Since the line was already run, it will create an infinite loop, so output the accumulator value
                 break
 
             # Check if the line number will be beyond the boot code's length

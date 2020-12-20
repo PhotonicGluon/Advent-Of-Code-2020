@@ -2,7 +2,7 @@
 day10-part1.py
 
 Created on 2020-12-10
-Updated on 2020-12-10
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -13,19 +13,21 @@ with open("input.txt", "r") as f:
     f.close()
 
 # COMPUTATION
+# Arrange the adaptors to form the adaptor array
 adaptors.append(0)  # This is the charging port
-adaptors.append(max(adaptors) + 3)  # This is the device
-adaptors = sorted(adaptors)  # Sort the list
+adaptors = sorted(adaptors)  # Sort the list to form the chain of adaptors
+adaptors.append(adaptors[-1] + 3)  # This is the device
 
-differenceOf1 = 0
-differenceOf3 = 0
+# Find the adaptors which have a difference of 1 or a difference of 3
+noOfDifferenceOf1 = 0
+noOfDifferenceOf3 = 0
 
 for i in range(len(adaptors) - 1):
     difference = adaptors[i + 1] - adaptors[i]
     if difference == 1:
-        differenceOf1 += 1
+        noOfDifferenceOf1 += 1
     if difference == 3:
-        differenceOf3 += 1
+        noOfDifferenceOf3 += 1
 
 # OUTPUT
-print(differenceOf1 * differenceOf3)
+print(noOfDifferenceOf1 * noOfDifferenceOf3)

@@ -2,7 +2,7 @@
 day7-part1.py
 
 Created on 2020-12-07
-Updated on 2020-12-09
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -28,7 +28,7 @@ with open("input.txt", "r") as f:
 
 # COMPUTATION
 queue = ["shiny gold"]  # We have a shiny gold bag
-bagsThatCanHoldAShinyGoldBag = set()
+canHoldShinyGoldBag = set()
 
 while len(queue) != 0:
     bag = queue[0]
@@ -38,10 +38,10 @@ while len(queue) != 0:
         possibleBags = rules[containerBag]  # These are the bags that are contained within the `containerBag`
         for possibleBag in possibleBags:
             if possibleBag[1] == bag:  # This possible bag is the desired `bag`
-                bagsThatCanHoldAShinyGoldBag = bagsThatCanHoldAShinyGoldBag.union({containerBag})
+                canHoldShinyGoldBag = canHoldShinyGoldBag.union({containerBag})
                 queue.append(containerBag)  # Now we need to process which bags can contain the `containerBag`
 
     queue.pop(0)  # Remove the first item in the queue since we just processed it
 
 # OUTPUT
-print(len(bagsThatCanHoldAShinyGoldBag))
+print(len(canHoldShinyGoldBag))

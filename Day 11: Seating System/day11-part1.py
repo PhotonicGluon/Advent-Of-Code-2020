@@ -2,7 +2,7 @@
 day11-part1.py
 
 Created on 2020-12-11
-Updated on 2020-12-11
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -20,7 +20,7 @@ with open("input.txt", "r") as f:
 # FUNCTIONS
 def is_occupied(index_i, index_j, tile_arrangement):
     """
-    Determines whether or not the tile at (`index_i`, `index_j`) is occupied.
+    Determines whether the tile at (`index_i`, `index_j`) is occupied.
 
     Args:
         index_i (int):
@@ -126,8 +126,7 @@ def print_arrangement(tile_arrangement):
     Prints the tile arrangement as a string.
 
     Args:
-        tile_arrangement (List[List[str]]):
-            Arrangement of the tiles as a 2D grid.
+        tile_arrangement (List[List[str]])
 
     Returns:
         str:
@@ -142,12 +141,12 @@ def print_arrangement(tile_arrangement):
 
 
 # COMPUTATION
+# Run the simulation
 previousArrangement = deepcopy(tileArrangement)
 iteration = 1
 
 while True:
     print(f"=== Iteration {iteration} ===")
-    # print(print_arrangement(previousArrangement))
     for i in range(len(previousArrangement)):
         for j in range(len(previousArrangement[0])):
             adjacent_filled_seats = no_occupied_adjacent_seats(i, j, previousArrangement)
@@ -175,4 +174,5 @@ for row in finalArrangement:
         if seat == "#":
             noFilled += 1
 
+# OUTPUT
 print(noFilled)

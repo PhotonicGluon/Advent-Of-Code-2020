@@ -2,7 +2,7 @@
 day2-part1.py
 
 Created on 2020-12-02
-Updated on 2020-12-02
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -18,7 +18,7 @@ noValid = 0
 for line in lines:
     # Parse each line
     limits, character, password = line.split(" ")
-    character = list(character)[0]  # Remove the trailing ":".
+    character = list(character)[0]  # Remove the trailing ":"
 
     # Count the number of instances of `character` in `password`
     noCharacter = 0

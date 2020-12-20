@@ -2,7 +2,7 @@
 day16-part1.py
 
 Created on 2020-12-16
-Updated on 2020-12-16
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -10,9 +10,9 @@ Copyright © Ryan Kan
 # INPUT
 with open("input-part1.txt", "r") as f:
     content = f.read()
-    sections = content.split("\n\n")  # Split by a double newline
+    sections = content.split("\n\n")
 
-    # The ticket fields
+    # The possible ticket fields
     ticketFields = {}
     for line in sections[0].split("\n"):
         components = line.split(": ")
@@ -35,7 +35,7 @@ with open("input-part1.txt", "r") as f:
     f.close()
 
 # COMPUTATION
-# Get ticket scanning error rate (TSER)
+# Get ticket scanning error rate
 ticketScanningErrorRate = 0
 invalidTickets = []  # We'll need this for part 2
 for nearbyTicket in nearbyTickets:
@@ -51,13 +51,13 @@ for nearbyTicket in nearbyTickets:
             invalidTickets.append(nearbyTicket)
             ticketScanningErrorRate += field
 
-# Do some things for part 2
+# Generate the input file for part 2
 for invalidTicket in invalidTickets:
     invalidTicket = ",".join([str(x) for x in invalidTicket])
     content = content.replace(invalidTicket + "\n", "")  # Remove the ticket entirely
 
 # OUTPUT
-print("TSER:", ticketScanningErrorRate)
+print("Part 1 Answer:", ticketScanningErrorRate)
 print("-" * 50)
 print("New input file for part 2:\n")
 print(content)

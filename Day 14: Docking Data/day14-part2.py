@@ -2,7 +2,7 @@
 day14-part2.py
 
 Created on 2020-12-14
-Updated on 2020-12-14
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -23,10 +23,12 @@ with open("input.txt", "r") as f:
     f.close()
 
 # COMPUTATION
+# Run the simulation
 mask = processes[0][1]
 memory = {}
 for process in processes:
     if process[0] == "MASK":
+        # Update the mask
         mask = process[1]
     else:
         # Apply mask to address
@@ -39,6 +41,7 @@ for process in processes:
 
         address = "".join(address)
 
+        # Find all possible addresses and update their values accordingly
         possibleXValueList = product(["0", "1"], repeat=noXs)
         for possibleXValueSet in possibleXValueList:
             tempAddress = address

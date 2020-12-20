@@ -2,7 +2,7 @@
 day9-part2.py
 
 Created on 2020-12-09
-Updated on 2020-12-10
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -15,7 +15,7 @@ with open("input.txt", "r") as f:
 
 # FUNCTIONS
 def subarray_sum(arr, no_elements, target_no):
-    """Shamelessly taken from https://www.geeksforgeeks.org/find-subarray-with-given-sum/"""
+    """Adapted from https://www.geeksforgeeks.org/find-subarray-with-given-sum/"""
     # Initialize `curr_sum` as value of first element and starting point as 0
     curr_sum = arr[0]
     start_index = 0
@@ -43,7 +43,7 @@ def subarray_sum(arr, no_elements, target_no):
 
 # COMPUTATION & OUTPUT
 target = 1309761972  # This was the result from part 1
-n = 2  # We can safely assume that no single element will sum to our target number
+n = 2  # We can assume that no single element will sum to our target number
 
 while n < len(numbers) - 1:
     print(f"=== Trying a subarray with {n:03d} elements ===")
@@ -55,5 +55,5 @@ while n < len(numbers) - 1:
         print(weakness)
         exit()
 
-    # If not found then increment `n`
+    # If not found then increment the value of `n`
     n += 1

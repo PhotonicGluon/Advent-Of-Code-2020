@@ -2,7 +2,7 @@
 day13-part1.py
 
 Created on 2020-12-13
-Updated on 2020-12-13
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -20,7 +20,7 @@ with open("input.txt", "r") as f:
     busServices = [int(x) for x in list(busServices)]
     f.close()
 
-# COMPUTATION
+# COMPUTATION & OUTPUT
 currTimestamp = timestamp
 while True:
     for busService in busServices:

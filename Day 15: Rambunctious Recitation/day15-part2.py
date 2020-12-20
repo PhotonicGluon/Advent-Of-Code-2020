@@ -2,7 +2,7 @@
 day15-part2.py
 
 Created on 2020-12-15
-Updated on 2020-12-15
+Updated on 2020-12-20
 
 Copyright © Ryan Kan
 """
@@ -20,6 +20,7 @@ for i, number in enumerate(numbers):
     print(number)
     saidNumbers[number] = (i + 1, 0)  # Turn no., never spoken before so there is no previous turn
 
+# Process the rest of the numbers, all the way until turn 2020
 turnNo = len(numbers) + 1
 mostRecentNumber = numbers[-1]
 while turnNo != 30000001:
